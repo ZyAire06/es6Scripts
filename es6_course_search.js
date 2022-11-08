@@ -39,7 +39,7 @@ let courses = [
 
  // When does the PROG200 course start?
 function isCoursesStart(courses){
-    if(courses.StartDate === "11/22/22"){
+    if(courses.CourseId === "PROG200"){
         return true;
     }
     else{
@@ -49,12 +49,12 @@ function isCoursesStart(courses){
 };
 
 let CoursesStartDate = courses.find(isCoursesStart);
-console.log(`This when courses PROJ200 starts ${CoursesStartDate}`);
+console.log(`This when courses PROJ200 starts ${CoursesStartDate.StartDate}`);
 
 
 //What is the title of the PRoJ500 course
 function isCoursesTitle(courses){
-    if(courses.Title ===  "Introduction to Angular"){
+    if(courses.CourseId === "PROJ500"){
         return true;
 
     }
@@ -68,7 +68,7 @@ let CoursesTitle = courses.find(isCoursesTitle);
 console.log(CoursesTitle);
 
 if( CoursesTitle != undefined){
-    console.log(`This is the title of PROJ500 ${CoursesTitle}`)
+    console.log(`This is the title of PROJ500 ${CoursesTitle.Title}`)
 }
 
 
@@ -85,9 +85,10 @@ function isLessThan50(courses){
     }
 }
 
-let Title50OrLess = courses.filter(isLessThan50);
-console.log(Title50OrLess);
-
+let title50OrLess = courses.filter(isLessThan50);
+if(title50OrLess != undefined){
+console.log(`These are the courses that is less than or equal too $50.00  ${title50OrLess.Fee}`);
+};
 //What classes meet in "Classroom 1"
 
 function isCorusesinClassroom(course){
@@ -100,7 +101,9 @@ function isCorusesinClassroom(course){
 }
 
 let coursesinClassroon = courses.filter(isCorusesinClassroom);
-console.log(coursesinClassroon);
+console.log(`These are the courses that'ts meaning in classroom 1 ${coursesinClassroon.CourseId}`);
+
+
  //loop through (not important)
 // let searchStartDate = "11/22/22";
 
